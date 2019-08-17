@@ -58,10 +58,12 @@ const notas = document.getElementById('notas');
 
 
 
+
+
 btnClear.addEventListener('click', () =>{
 
-    visor.value = 0;
-    notas.innerText = 0;
+    visor.value = null;
+    notas.innerText = null;
 
 })
 
@@ -118,27 +120,48 @@ tecla9.addEventListener('click',() =>{
 
 btnConfirm.addEventListener('click', () =>{
 
-    const notas = visor.value;
-        if (notas%10>0){
+    let valor = visor.value;
+
+        if (valor%10>0) {
+
             alert ('Digite valores multiplos de 10!');
-        }
-        while (notas>0) {
-            if (notas>=100){
-                visor.innerText = visor.innerText + '100R$';
-                notas = notas-100;
+
+        } else {
+
+        //debugger;
+
+        while (valor>0) {
+
+            if (valor>=100){
+
+                notas.innerText = notas.innerText + '$ 100';
+                valor = valor-100;
+
             }
+            else if (valor>=50) {
+
+                notas.innerText = notas.innerText + ' $ 50';
+                valor = valor-50;
+
+            }
+            else if (valor>=20) {
+
+                notas.innerText = notas.innerText + ' $ 20';
+                valor = valor-20;
+
+            }
+            else if (valor>=10) {
+
+                notas.innerText = notas.innerText + ' $ 10 ';
+                valor = valor-10;
+
+            }
+
+
+
         }
-            if (notas>=50) {
-                visor.innerText = visor.innerText + '50R$';
-                notas = notas-50;
-        }
-            if (notas>=20) {
-                visor.innerText = visor.innerText + '20R$';
-                notas = notas-20;      
-        }
-            if (notas>=10) {
-                visor.innerText = visor.innerText + '10R$';
-                notas = notas-10; 
-        }
+        //console.log (visor);
+
+    }
 })
 

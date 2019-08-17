@@ -73,6 +73,8 @@ html, body {
 
 .main > .atm .account .withdraw {
   background-color: #fff;
+  line-height: 2rem;
+  letter-spacing: 0.2rem;
   width: 100%;
   height: 100px;
   border: 3px solid #01B4F5;
